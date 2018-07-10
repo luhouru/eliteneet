@@ -183,7 +183,7 @@ if (isset($_GET['action'])) {
 
 
 //grab the user details
-$db = mysqli_connect("localhost", "root", "supfoo2971", "users");
+$db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
 $query = "SELECT * FROM users where username='".$_COOKIE['username']."'";
 $result = mysqli_query($db, $query);
 $userdetails = mysqli_fetch_assoc($result);
@@ -202,7 +202,7 @@ if (isset($_GET['page'])) {
 		break;
 
 		case "about":
-		$subtitle = "About NashorDB";
+		$subtitle = "About CryptoDB";
 		break;
         
         case "soundcloud":
@@ -243,7 +243,7 @@ if (isset($_GET['page'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NashorDB: A Database Management Dashboard</title>
+    <title>CryptoDB: Cryptocurrency Database Trade Tracker</title>
 
     <!-- Core CSS - Include with every page -->
     <link rel="icon" 
@@ -265,7 +265,7 @@ if (isset($_GET['page'])) {
 
 </head>
 
-<body style="zoom: 85%";background-size:100%;background-position:absolute;background-attachment:fixed;background-color:transparent;" background="img/white_Bg.png">
+<body style="zoom: 85%";background-size:100%;background-position:absolute;background-attachment:fixed;background-color:transparent; background="img/white_Bg.png">
 
     <div id="wrapper">
 
@@ -277,7 +277,7 @@ if (isset($_GET['page'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a style="color: black" class="navbar-brand" href="index.php"><?php echo "<b>Nashor:</b> Welcome, ".$userdetails['firstname'].". The date is ".date('F jS, Y',time()) .". It is ".date('h:iA',time())."."; ?></a>
+                <a style="color: black" class="navbar-brand" href="index.php"><?php echo "<b>TRON-AI:</b> Welcome, ".$userdetails['firstname'].". The date is ".date('F jS, Y',time()) .". It is ".date('h:iA',time())."."; ?></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -354,7 +354,7 @@ if (isset($_GET['page'])) {
             <div class="row">
                
                 <div class="col-lg-12">
-                    <h1 style="color:black;line-height:60px;" class="page-header"><b>NashorDB</b> <small style="color:#4582ec"><?php echo $subtitle; ?></small> <img style="vertical-align:middle;float:right;" height="60" src="img/baron_icon.png" /></h1>
+                    <h1 style="color:black;line-height:60px;" class="page-header"><b>CryptoDB</b> <small style="color:#4582ec"><?php echo $subtitle; ?></small> <img style="vertical-align:middle;float:right;" height="60" src="img/baron_icon.png" /></h1>
                 </div>
                     
             </div>

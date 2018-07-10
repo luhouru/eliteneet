@@ -2,15 +2,20 @@
 
 function checklogin($username, $password) {
 
-$db = mysqli_connect("localhost", "luho", "jisoo", "users");
+$db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
 // in prod user is luho pass is jisoo
 		
 	if (!$db) {
 		return 2;
 	}
+    
 	
 	$password = sha1($password);
 	$result = mysqli_query($db,"SELECT * FROM users WHERE username = '$username' AND password = '$password'");
+    
+    echo $password;
+    
+    
 	if (!$result) {
 		return FALSE;
 	} else {

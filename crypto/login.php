@@ -49,7 +49,7 @@ require_once("genlatestmsg.php");
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>NashorDB: A Database Management Dashboard - Chris Luk Dot Im</title>
+    <title>CryptoDB - Database Tracker for Personal Crypto Trades</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="css/bootswatch.min.css">
@@ -83,17 +83,17 @@ require_once("genlatestmsg.php");
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
             <li>
-              <button style="background-color: #FFFFFF;border: 1px solid #bebebe;" class="btn btn-default" data-toggle="modal" href="#about-modal">ABOUT</button>
+              <button style="background-color: #FFFFFF;border: 1px solid #bebebe;" class="btn btn-default" data-toggle="modal" href="#about-modal">About CryptoDB</button>
               <!-- Modal -->
             </li>
             <li class="dropdown">
-              <button style="margin-left:25px;background-color: #FFFFFF;border: 1px solid #bebebe;" class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#" id="download">LINKS <span class="caret"></span></button>
+              <button style="margin-left:25px;background-color: #FFFFFF;border: 1px solid #bebebe;" class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#" id="download">Links <span class="caret"></span></button>
               <ul class="dropdown-menu" aria-labelledby="download">
-                <li><a href="http://www.lolking.net/summoner/na/24810624">LoLKing Profile</a></li>
-                <li><a href="http://op.gg">OP.GG</a></li>
+                <li><a href="http://www.binance.com">Binance</a></li>
+                <li><a href="http://www.coinbase.com">Coinbase</a></li>
                 <li class="divider"></li>
-                <li><a href="http://www.lolnexus.com/">LoL Nexus</a></li>
-                <li><a href="http://www.reddit.com/r/leagueoflegends">Reddit</a></li>
+                <li><a href="http://www.reddit.com/r/cryptocurrency">Reddit</a></li>
+                <li><a href="http://www.tradingview.com/">TradingView</a></li>
               </ul>
             </li>
           </ul>
@@ -125,14 +125,14 @@ require_once("genlatestmsg.php");
                   <div class="modal-content">
                     <div class="modal-header">
                       <button style="color:black;" type="button" class="close" data-dismiss="modal">×</button>
-                      <h4 class="modal-title">About NashorDB</h4>
+                      <h4 class="modal-title">About CryptoDB</h4>
                     </div>
                     <div class="modal-body">
-                      NashorDB is a database management tool that helps to aid those in hopes of climbing ELO. Instead of manually logging your data in a Google Docs spreadsheet, NashorDB offers a user-friendly interface to record your match history details while filling in additional comments that will remind you to focus on the elements of the game where you are lacking, and make less of those mistakes as you try and succeed through ranked solo.<br><br>
-                      All images and artwork on this website are owned by Riot Games.
+                      CryptoDB is a database management tool that helps to aid those in hopes of trading like a pro. Instead of manually logging your data in a Google Docs spreadsheet, CryptoDB offers a user-friendly interface to record your trades, track your % gains, and add any additional comments that would help remind you to focus what's important, and make less mistakes as you make money. I hope you can find this useful, happy trading!<br>
+                      
                     </div>
                     <div class="modal-footer">
-                      <p align="left">&copy; CHRISLUK &nbsp;&nbsp;</p>
+                      <p align="left">&copy; LUHO &nbsp;&nbsp;</p>
                     </div>
                   </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -151,26 +151,26 @@ require_once("genlatestmsg.php");
                     <div class="modal-body" style="transform:scale(0.9);">
                             <fieldset>
                         <div class="form-group">
-                            <label for="inputName" class="col-lg-2 control-label">Name</label>
-                            <div class="col-lg-10">
+                            <label for="inputName" class="col-lg-2 control-label">Name</label><br><br>
+                            <div class="col-lg-12">
                                 <input type="text" class="form-control" name="inputName" placeholder="Name">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputUsername" class="col-lg-2 control-label">Username</label>
-                            <div class="col-lg-10">
+                            <label for="inputUsername" class="col-lg-2 control-label">Username</label><br><br>
+                            <div class="col-lg-12">
                                 <input type="text" class="form-control" name="inputUsername" placeholder="Username">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                            <div class="col-lg-10">
+                            <label for="inputPassword" class="col-lg-2 control-label">Password</label><br><br>
+                            <div class="col-lg-12">
                                 <input type="password" class="form-control" name="inputPassword" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                            <div class="col-lg-10">
+                            <label for="inputEmail" class="col-lg-2 control-label">Email</label><br><br>
+                            <div class="col-lg-12">
                                 <input type="email" class="form-control" name="inputEmail" placeholder="Email">
                             </div>
                         </div>
@@ -178,7 +178,7 @@ require_once("genlatestmsg.php");
 
                     </div>
                     <div class="modal-footer">
-                      <button type="submit" class="btn btn-default">Register Now</button>
+                      <button type="submit" class="btn btn-default btn-block">Register Now</button>
                     </div>
                     </form>
                   </div><!-- /.modal-content -->
@@ -191,21 +191,20 @@ require_once("genlatestmsg.php");
                   <div class="modal-content">
                     <div class="modal-header">
                       <button style="color:black;" type="button" class="close" data-dismiss="modal">×</button>
-                      <h4 class="modal-title">Please Login</h4><br>
-                        <p>You may login with username 'RIOT' and password 'GAMES'.</p>
+                      <h4 class="modal-title">Login</h4>
                     </div>
                     <form class="form-horizontal" action="index.php?action=login" method="POST" role="form">
                     <div class="modal-body" style="transform:scale(0.9);">
                             <fieldset>
                         <div class="form-group">
-                            <label for="username" class="col-lg-2 control-label">Username</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" name="username" placeholder="Username">
+                            <label for="username" class="col-lg-2 control-label">Username</label><br><br>
+                            <div class="col-lg-12">
+                                <input type="text" class="form-control" name="username" placeholder="Enter username">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="col-lg-2 control-label">Password</label>
-                            <div class="col-lg-10">
+                            <label for="password" class="col-lg-2 control-label">Password</label><br><br>
+                            <div class="col-lg-12">
                                 <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
                         </div>
@@ -213,7 +212,7 @@ require_once("genlatestmsg.php");
 
                     </div>
                     <div class="modal-footer">
-                      <button type="submit" class="btn btn-default">Login Now</button>
+                      <button type="submit" class="btn btn-success btn-block">Login</button>
                     </div>
                     </form>
                   </div><!-- /.modal-content -->

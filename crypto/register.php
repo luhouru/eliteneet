@@ -5,11 +5,13 @@
 
 function register($firstname, $username, $password, $email) {
 
-$db = mysqli_connect("localhost", "root", "supfoo2971", "users");
+$db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
 		
 	if (!$db) {
 		return 2;
 	}
+    
+    
 	$password = sha1($password);
     
     // check if username is already taken
@@ -28,16 +30,21 @@ $db = mysqli_connect("localhost", "root", "supfoo2971", "users");
         
         // safe to insert
         // connect to stats table
-        $db = mysqli_connect("localhost", "root", "supfoo2971", "stats");
+        
+        // THIS WILL BE A WIP FOR INITIATING A TRADES SPREADSHEET
+        
+        /*$db = mysqli_connect("localhost", "root", "supfoo2971", "stats");
         $stats_result = mysqli_query($db, "CREATE TABLE ".$username." (entry_id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY, division  varchar(255), lp bigint(20), gain varchar(8), champion varchar(20), position varchar(20), kda varchar(30), cs int(10), mistakes varchar(255), improve_by varchar(255));");
         if ($stats_result == false) {
             echo "Create table failed: ".mysqli_error($db)."<br>";
             echo "Error creating performance table, please e-mail baron@nashordb.net.";
             die();
-        }
+        }*/
             
         // after we have created everything, mail email
-        $from = "baron@nashordb.net";
+        
+        // ANOTHER WIP FOR SENDING E-MAIL
+        /*$from = "baron@nashordb.net";
         $subject = "Welcome to NashorDB!";
         $message = "Welcome, fellow Summoner, \n\n
                             I Hope you find everything here easy to use and look at. If you have any questions or problems, please e-mail me back at baron@nashordb.net. Wish you the best of luck in soloQ!
@@ -45,8 +52,8 @@ $db = mysqli_connect("localhost", "root", "supfoo2971", "users");
                                 Chris Luk \n
                                     - NashorDB Admin";
         mail($email,$subject,$message,"From: $from\n");
+        return true;*/
         return true;
-        
 	} else {
             // return to login with modal saying username already exists.
             return false; // there was already a username existed

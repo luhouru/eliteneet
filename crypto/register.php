@@ -33,13 +33,15 @@ $db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
         
         // THIS WILL BE A WIP FOR INITIATING A TRADES SPREADSHEET
         
-        /*$db = mysqli_connect("localhost", "root", "supfoo2971", "stats");
-        $stats_result = mysqli_query($db, "CREATE TABLE ".$username." (entry_id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY, division  varchar(255), lp bigint(20), gain varchar(8), champion varchar(20), position varchar(20), kda varchar(30), cs int(10), mistakes varchar(255), improve_by varchar(255));");
+        $db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
+        $stats_result = mysqli_query($db, "CREATE TABLE ".$username." (entry_id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY, coin varchar(255), amt bigint(20), sat_buy decimal(20), sat_tar decimal(8), sat_sel decimal(20), btc_before decimal(10), btc_after decimal(20), per_gain decimal(20), btc_gain decimal(20));");
+        
+        
         if ($stats_result == false) {
             echo "Create table failed: ".mysqli_error($db)."<br>";
-            echo "Error creating performance table, please e-mail baron@nashordb.net.";
+            echo "Error creating trades table, please e-mail contact the administrator.";
             die();
-        }*/
+        }
             
         // after we have created everything, mail email
         

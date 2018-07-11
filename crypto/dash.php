@@ -26,11 +26,11 @@
                                 $btc_result = mysqli_query($connection, $last_btc_value);
                                 $row_cnt = $btc_result->num_rows;
                                 if ($row_cnt == 0) {
-                                    $btc = 4;
-                                    //change this in future
+                                    // change this placeholder hardcode
+                                    $btc = 0;
                                 } else {
                                     $btc_row = mysqli_fetch_assoc($btc_result);
-                                    $btc = $btc_row['btc_after'];
+                                    $btc = $btc_row['cum_btc'];
                                 }
                                 echo $btc;
                             ?></h3>

@@ -11,11 +11,11 @@
                                 $btc_result = mysqli_query($connection, $last_btc_value);
                                 $row_cnt = $btc_result->num_rows;
                                 if ($row_cnt == 0) {
-                                    $btc = 4;
-                                    //change this in future
+                                    // change this placeholder hardcode
+                                    $btc = 0;
                                 } else {
                                     $btc_row = mysqli_fetch_assoc($btc_result);
-                                    $btc = $btc_row['btc_after'];
+                                    $btc = $btc_row['cum_btc'];
                                 }
                                 echo $btc;
                             ?></h3>
@@ -23,21 +23,6 @@
             <div class="progress progress-striped active">
                 <div class="progress-bar"
                      <?php
-                                $connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
-                                /*$db_name = 'stats';
-                                mysql_select_db($db_name, $connection);*/
-                                $username = $_COOKIE['username'];
-                                // find the last entries LP
-                                $last_btc_value = "SELECT `btc_after` FROM ".$username." ORDER BY entry_id DESC limit 1";
-                                $btc_result = mysqli_query($connection, $last_btc_value);
-                                $row_cnt = $btc_result->num_rows;
-                                if ($row_cnt == 0) {
-                                    // change this placeholder hardcode
-                                    $btc = 4;
-                                } else {
-                                    $btc_row = mysqli_fetch_assoc($btc_result);
-                                    $btc = $btc_row['btc_after'];
-                                }
                         echo "style='width: ".$btc."%'";
                     ?>>
                 </div>

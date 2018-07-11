@@ -45,7 +45,8 @@
                             <div class="col-lg-4">
 								<div class="form-group">
                                     <label>Coin:</label>
-                                    <select class="form-control" id="select" name="coin">
+                                    <select class="form-control" name="coin" id="select" type="text">
+                                        
                                         <option>BTC</option>
                                         <option>BCH</option>
                                         <option>ETH</option>
@@ -62,35 +63,35 @@
 								</div>
                                 <div class="form-group">
                                     <label>Amount:</label>
-                                    <input placeholder="3000" type="number" name="quantity" min="0" max="1000000" class="form-control" name="amount">
+                                    <input type="text" class="form-control" name="amount">
 								</div>
                                 <div class="form-group">
                                     <label>BTC Before:</label>
-                                    <input placeholder="3.0" type="number" step="any" class="form-control" name="btcbefore">
+                                    <input type="text" class="form-control" name="btcbefore">
 								</div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
 									<label>Buy At:</label>
-                                    <input placeholder="0.00000500" type="number" step="any" class="form-control" name="buyprice">
+                                    <input type="text" class="form-control" name="buyprice">
 								</div>
 								<div class="form-group">
 									<label>% Gain:</label>
-                                    <input placeholder="10%" class="form-control" name="pergain">
+                                    <input type="text" class="form-control" name="pergain">
 								</div>
                                 <div class="form-group">
 									<label>BTC After:</label>
-                                    <input placeholder="3.3" type="number" step="any" name="quantity" min="0" max="650" class="form-control" name="btcafter">
+                                    <input type="text" class="form-control" name="btcafter">
 								</div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
 									<label>Sell At:</label>
-                                    <input placeholder="0.00000550" type="number" step="any" class="form-control" name="sellprice">
+                                    <input type="text" class="form-control" name="sellprice">
 								</div>
 								<div class="form-group">
 									<label>BTC Gain:</label>
-                                    <input placeholder="0.3" type="number" step="any" class="form-control" name="btcgain">
+                                    <input type="text" class="form-control" name="btcgain">
                                 </div>
                             <div class="form-group">
 							<button type="submit" align="center" style="margin-top:35px;" class="btn btn-info btn-lg btn-block">Enter Trade</button></div>

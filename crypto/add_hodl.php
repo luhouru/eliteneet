@@ -1,6 +1,6 @@
 <?php
 
-function add_teamcomp($coin, $amt) {
+function add_hodl($coin, $amt) {
 
 	// Connecting to database
 	$connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");

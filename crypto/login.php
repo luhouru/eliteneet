@@ -37,9 +37,9 @@ require_once("gen_roster.php");
 require_once("checklogin.php");
 require_once("add_entry.php");
 require_once("add_roster.php");
-require_once("add_teamcomp.php");
+require_once("add_hodl.php");
 require_once("genchecklist.php");
-require_once("gen_team_comp.php");
+require_once("gen_hodl.php");
 require_once("genlatestmsg.php");
 
 ?>

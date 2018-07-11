@@ -60,7 +60,7 @@ $next--;
 $forstyle = "btn-primary";
 }
 
-$result = '<div class="panel panel-danger">
+$result = '<div class="panel panel-info">
                         <div class="panel-heading">
                             <i class="fa fa-table fa-fw"></i> Team Comps
                         </div>

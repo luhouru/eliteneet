@@ -1,45 +1,30 @@
             <div class="row">
                 <!-- /.col-lg-12 -->
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <!-- /.panel -->
                     <?php 
-					   echo gen_team_comp(0,0); 
-					?>
-                </div>
-                <div class="col-lg-6">
-                    <!-- /.panel -->
-                     <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <i class="fa fa-edit fa-fw"></i> Add New Team Composition
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                           <form action="index.php?page=comp&action=add_teamcomp" method="POST" role="form">
-								<div class="form-group">
-                                    <label>Top:</label>
-                                    <input class="form-control" name="top">
-								</div>
-                                <div class="form-group">
-                                    <label>Mid:</label>
-                                    <input class="form-control" name="mid">
-								</div>
-                                <div class="form-group">
-                                    <label>Jungle:</label>
-                                    <input class="form-control" name="jungle">
-								</div>
-                                <div class="form-group">
-                                    <label>ADC:</label>
-                                    <input class="form-control" name="adc">
-								</div>
-								<div class="form-group">
-									<label>Support:</label>
-                                    <input class="form-control" name="support">
-								</div>
-							<button type="submit" class="btn btn-success btn-lg btn-block">Add Team Comp</button>
-							</form>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
+					   //echo gen_team_comp(0,0);
+                       //technically we could add entries...but for this page we already know which coins we want to look at from what we're invested in.
+                    
+                    // connect to db
+                    $connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
+                    $username = $_COOKIE['username'];
+                    // grab all of the coins in this table and put it into an array
+                    $myCoins = "SELECT coin FROM ".$username.";";
+                    $coins = mysqli_query($connection, $myCoins);
+                    $coin_row = $coins->num_rows;
+                    if ($coin_row == 0) {
+                        $coins = "No coins.";
+                    } else {
+                        $coins_result = mysqli_fetch_assoc($coins);
+                    }
+
+                    foreach($coins_result as $value) {
+                      // 
+                    }
+
+                    
+                    
+                    ?>
                 </div>
             </div>

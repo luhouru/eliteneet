@@ -227,33 +227,33 @@ require_once("genlatestmsg.php");
               <div style="position: relative; left: 0; top: 0;">
                   <div style="margin-top:-80px;" align="center">
                       
-            <hr style="border-color:#4cf3ad;background-color:#4cf3ad;color:#4cf3ad;">
+            <!--<hr style="border-color:#4cf3ad;background-color:#4cf3ad;color:#4cf3ad;">-->
                   <img style="margin-left:auto; margin-top:30px; height:130px; weight:130px;overflow: hidden;" src="img/ndb_logo.png"/><br><br>
                   </div>
-                  <hr style="border-color:#4cf3ad;background-color:#4cf3ad;color:#4cf3ad;">
+                  <!--<hr style="border-color:#4cf3ad;background-color:#4cf3ad;color:#4cf3ad;">-->
               </div>
        
                    
-    <div style="margin-top:60px;" id="table" class="row">
-            <h1 id="tables" style="color:#00FFBF;">RECORD MATCH DETAILS</h1>
-         <div class="col-lg-12">
+    <div id="table" class="row">
+            <!--<h1 id="tables" style="color:#00FFBF;">RECORD MATCH DETAILS</h1>-->
+         <!--<div class="col-lg-12">
               <div class="col-lg-6">
                   <img style="height:80%;width:80%;margin-top:0px;margin-left: 25px;margin-right: auto;" src="img/mhl_data.png"/>
               </div>
               <div class="col-lg-6">
                   <img style="height:100%;width:100%;margin-top:-25px;margin-left: auto;margin-right: auto;" src="img/sample_table.png"/>
               </div>
-         </div>
+         </div>-->
          
         <div class="col-lg-12">
         <!--FORM TO ADD ENTRY-->
             <div class="row">
-                <div style="margin-top:75px;" class="page-header">
+                <div style="margin-top:-40px;" class="page-header">
                     <br>
-                    <h1 id="tables" style="color:#00FFBF;">USER-FRIENDLY FORMS</h1>
+                    <h1 id="tables" align="center" style="color:#00FFBF;">Record your trades. Visualize your gains.</h1>
                 </div>
                 <div class="col-lg-12">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <i class="fa fa-upload fa-fw"></i> LOG NEW ENTRY
                         </div>
@@ -263,74 +263,52 @@ require_once("genlatestmsg.php");
                             <div class="col-lg-4">
 								<div class="form-group">
                                     <label>Division:</label>
-                                    <select class="form-control" id="select" name="division">
-                                        <option>Master</option>
-                                        <option>Challenger</option>
-                                        <option>Diamond I</option>
-                                        <option>Diamond II</option>
-                                        <option>Diamond III</option>
-                                        <option>Diamond IV</option>
-                                        <option>Diamond V</option>
-                                        <option>Platinum I</option>
-                                        <option>Platinum II</option>
-                                        <option>Platinum III</option>
-                                        <option>Platinum IV</option>
-                                        <option>Platinum V</option>
-                                        <option>Gold I</option>
-                                        <option>Gold II</option>
-                                        <option>Gold III</option>
-                                        <option>Gold IV</option>
-                                        <option>Gold V</option>
-                                        <option>Silver I</option>
-                                        <option>Silver II</option>
-                                        <option>Silver III</option>
-                                        <option>Silver IV</option>
-                                        <option>Silver V</option>
-                                        <option>Bronze I</option>
-                                        <option>Bronze II</option>
-                                        <option>Bronze III</option>
-                                        <option>Bronze IV</option>
-                                        <option>Bronze V</option>
+                                    <select class="form-control" id="select" name="coin">
+                                        <option>BTC</option>
+                                        <option>BCH</option>
+                                        <option>ETH</option>
+                                        <option>LTC</option>
+                                        <option>TRX</option>
+                                        <option>NEO</option>
+                                        <option>XRP</option>
+                                        <option>ICX</option>
+                                        <option>IOTA</option>
+                                        <option>ENG</option>
+                                        <option>ETC</option>
+                                        <option>VEN</option>
                                     </select>
 								</div>
                                 <div class="form-group">
-                                    <label>Current LP:</label>
-                                    <input placeholder="0" type="number" name="quantity" min="0" max="100" class="form-control" name="lp" disabled>
+                                    <label>Amount:</label>
+                                    <input placeholder="0" type="number" name="quantity" min="0" max="100" class="form-control" name="amount" disabled>
 								</div>
                                 <div class="form-group">
-                                    <label>Champion:</label>
-                                    <input class="form-control" name="champion" disabled>
+                                    <label>Buy At:</label>
+                                    <input placeholder="0.00000500" class="form-control" name="buyprice" disabled>
 								</div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label>Position:</label>
-                                    <select class="form-control" id="select" name="position">
-                                        <option>Top</option>
-                                        <option>Jungle</option>
-                                        <option>Mid</option>
-                                        <option>Marksman</option>
-                                        <option>Support</option>
-                                    </select>
+									<label>Sold At:</label>
+                                    <input placeholder="0.00000550" class="form-control" name="sellprice" disabled>
 								</div>
-                            
 								<div class="form-group">
-									<label>KDA:</label>
-                                    <input placeholder="0/0/0" class="form-control" name="kda" disabled>
+									<label>BTC Before:</label>
+                                    <input placeholder="3.0" class="form-control" name="btcbefore" disabled>
 								</div>
                                 <div class="form-group">
-									<label>CS:</label>
-                                    <input placeholder="0" type="number" name="quantity" min="0" max="650" class="form-control" name="cs" disabled>
+									<label>BTC After:</label>
+                                    <input placeholder="3.3" type="number" name="quantity" min="0" max="650" class="form-control" name="btcafter" disabled>
 								</div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-									<label>Mistakes:</label>
-                                    <input class="form-control" name="mistakes" disabled>
+									<label>% Gain:</label>
+                                    <input class="form-control" name="pergain" disabled>
 								</div>
 								<div class="form-group">
-									<label>Improve By:</label>
-                                    <input class="form-control" name="improvements" disabled>
+									<label>BTC Gain:</label>
+                                    <input class="form-control" name="btcgain" disabled>
                                 </div>
                             <div class="form-group">
 							<button type="submit" align="center" style="margin-top:35px;" class="disabled btn btn-danger btn-lg btn-block">Add Entry</button></div>
@@ -345,7 +323,7 @@ require_once("genlatestmsg.php");
             </div>
         </div>
         </div>
-        <div class="row">
+       <!-- <div class="row">
           <div class="col-lg-12">
               <br><br>
             <div class="page-header">
@@ -353,10 +331,10 @@ require_once("genlatestmsg.php");
             </div>
             <img align="middle" style="position: relative;height:100%;width:100%;" src="http://i.imgur.com/6dDBSOO.png"/>
           </div>
-        </div>
+        </div>-->
         
         <!-------------- REVIEWS -------------->
-        <div class="row">
+        <!--<div class="row">
           <div class="col-lg-12">
               <br><br>
             <div style="margin-top:125px;" class="page-header">
@@ -379,7 +357,7 @@ require_once("genlatestmsg.php");
                 <small style="color:#00FFBF;"> <cite title="Source Title">Chombol</cite></small>
               </blockquote>
             </div>
-          </div>
+          </div>-->
 
         
         
@@ -389,8 +367,8 @@ require_once("genlatestmsg.php");
           
         <div class="row">
           <div align="center" class="col-lg-12">
-              <br><br><br>
-            <p style="color:white;">Email: <a style="color:rgb(226, 63, 63);" href="mailto:baron@nashordb.net">baron@nashordb.net</a><br><br><a style="color:#00FFBF;" href="http://chrisluk.im" rel="nofollow">&copy; CHRISLUK</a></p>
+              <br>
+            <p style="color:white;">Email: <a style="color:rgb(226, 63, 63);" href="mailto:luho@chrisluk.im">luho@chrisluk.im</a><br><br><a style="color:#00FFBF;" href="http://chrisluk.im" rel="nofollow">&copy;LUHO</a></p>
           </div>
         </div>
 

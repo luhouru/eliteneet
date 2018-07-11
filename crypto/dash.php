@@ -15,7 +15,7 @@
         </div>
                 <div class="col-lg-12">
                     <div>
-                    <h3>BTC Value:
+                    <h3 style="color:white;line-height:60px;">BTC Value:
                         <?php
                                 $connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
                                 /*$db_name = 'stats';

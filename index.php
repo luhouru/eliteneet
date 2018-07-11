@@ -26,6 +26,9 @@ echo "1. <a href=$url>$site_title</a><br>
 3. list of video games I've played<br>
 4. goals for next year as elite neet number 1.<br>";
 
+$url="/phpMyAdmin";
+$site_title="phpMyAdmin";  
+echo "1. <a href=$url>$site_title</a><br>";
 ?>
 </body>
 </html>

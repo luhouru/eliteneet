@@ -108,7 +108,7 @@
                                 $next_div = "Unknown";
 	                        break;
                             default:
-                                $next_div = "Unknown";
+                                $next_div = "4";
                                 break;
 			}
 
@@ -117,26 +117,27 @@
                         } else {
                             echo "Next Division: ".$next_div;
                         }*/
-                    echo "<p style='color:white;'>BTC Value: ".$next_div."</p>";
+                    echo "<h3 style='color:white;'>BTC Value: ".$next_div."</h3>";
                     ?></p>
             <div class="progress progress-striped active">
                 <div class="progress-bar"
                      <?php
-                    	$connection = mysqli_connect("localhost", "root", "supfoo2971", "stats");
-                        /*$db_name = 'stats';
-                        mysql_select_db($db_name, $connection);*/
- 	                    $username = $_COOKIE['username'];
-                        // find the last entries LP
-                        $lp_query = "SELECT `lp` FROM ".$username." ORDER BY entry_id DESC limit 1";
-                        $lp_result = mysqli_query($connection, $lp_query);
-                        $row_cnt = $lp_result->num_rows;
-                        if ($row_cnt == 0) {
-                            $lp_old = 0;
-                        } else {
-                            $lp_row = mysqli_fetch_assoc($lp_result);
-                            $lp_old = $lp_row['lp'];
-                        }
-                        echo "style='width: ".$lp_old."%'";
+                                $connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
+                                /*$db_name = 'stats';
+                                mysql_select_db($db_name, $connection);*/
+                                $username = $_COOKIE['username'];
+                                // find the last entries LP
+                                $last_btc_value = "SELECT `btc_after` FROM ".$username." ORDER BY entry_id DESC limit 1";
+                                $btc_result = mysqli_query($connection, $last_btc_value);
+                                $row_cnt = $btc_result->num_rows;
+                                if ($row_cnt == 0) {
+                                    // change this placeholder hardcode
+                                    $btc = 4;
+                                } else {
+                                    $btc_row = mysqli_fetch_assoc($btc_result);
+                                    $btc = $btc_row['btc_after'];
+                                }
+                        echo "style='width: ".$btc."%'";
                     ?>>
                 </div>
             </div>    
@@ -148,7 +149,7 @@
 					?>
                 </div>
                 <div class="col-lg-12">
-                    <div class="panel panel-success">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <i class="fa fa-upload fa-fw"></i> Add Match Details
                         </div>

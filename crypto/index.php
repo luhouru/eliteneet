@@ -310,35 +310,35 @@ if (isset($_GET['page'])) {
 							</form>
                         </li>-->
                         <li>
-                            <a style="color:#41d785;" href="index.php?page=dash"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a style="color:#3a66da;" href="index.php?page=dash"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a style="color:#41d785;" href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Statistics<span class="fa arrow"></span></a>
+                            <a style="color:#3a66da;" href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Statistics<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a style="color:#41d785;" href="index.php?page=stats"><i class="fa fa-table fa-fw"></i> Performance Chart</a>
+                                    <a style="color:#3a66da;" href="index.php?page=stats"><i class="fa fa-table fa-fw"></i> Trading Tracker</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a style="color:#41d785;" href="#"><i class="fa fa-group fa-fw"></i> Ranked 5's<span class="fa arrow"></span></a>
+                            <a style="color:#3a66da;" href="#"><i class="fa fa-group fa-fw"></i> Visual Data<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
+<!--                                <li>
                                     <a style="color:#41d785;" href="index.php?page=bulletin"><i class="fa fa-paperclip fa-fw"></i> Bulletin</a>
-                                </li>
+                                </li>-->
                                 <li>
-                                    <a style="color:#41d785;" href="index.php?page=roster"><i class="fa fa-table fa-fw"></i> Roster</a>
-                                </li>
-                                <li>
-                                    <a style="color:#41d785;" href="index.php?page=comp#"><i class="fa fa-file fa-fw"></i> Team Comps</a>
+                                    <a style="color:#3a66da;" href="index.php?page=roster"><i class="fa fa-table fa-fw"></i> Graphs</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a style="color:#41d785;" href="index.php?page=soundcloud"><i class="fa fa-music fa-fw"></i> SoundCloud</a>
+                            <a style="color:#3a66da;" href="index.php?page=comp#"><i class="fa fa-file fa-fw"></i> Placeholder Tab</a>
+                        </li>
+                        <li>
+                            <a style="color:#3a66da;" href="index.php?page=soundcloud"><i class="fa fa-music fa-fw"></i> SoundCloud</a>
                         </li>
     					<li>
-                            <a style="color:#41d785;" href="index.php?page=about"><i class="fa fa-user fa-fw"></i> About</a>
+                            <a style="color:#3a66da;" href="index.php?page=about"><i class="fa fa-user fa-fw"></i> About</a>
                         </li>
                     </ul>
                     <!-- /#side-menu -->
@@ -354,7 +354,7 @@ if (isset($_GET['page'])) {
             <div class="row">
                
                 <div class="col-lg-12">
-                    <h1 style="color:white;line-height:60px;" class="page-header"><b>CryptoDB</b> <small style="color:#15f999"><?php echo $subtitle; ?></small> <img style="vertical-align:middle;float:right;" height="60" src="img/baron_icon.png" /></h1>
+                    <h1 style="color:white;line-height:60px;" class="page-header"><b>CryptoDB</b> <small style="color:#a0bcff"><?php echo $subtitle; ?></small> <img style="vertical-align:middle;float:right;" height="60" src="img/baron_icon.png" /></h1>
                 </div>
                     
             </div>

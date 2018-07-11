@@ -265,7 +265,7 @@ if (isset($_GET['page'])) {
 
 </head>
 
-<body style="zoom: 85%";background-size:100%;background-position:absolute;background-attachment:fixed;background-color:transparent; background="img/white_Bg.png">
+<body style="zoom: 85%";background-size:100%;background-position:absolute;background-attachment:fixed;background-color:transparent; background="img/blue_Bg.jpg">
 
     <div id="wrapper">
 
@@ -277,7 +277,7 @@ if (isset($_GET['page'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a style="color: black" class="navbar-brand" href="index.php"><?php echo "<b>TRON-AI:</b> Welcome, ".$userdetails['firstname'].". The date is ".date('F jS, Y',time()) .". It is ".date('h:iA',time())."."; ?></a>
+                <a style="color: white" class="navbar-brand" href="index.php"><?php echo "<b>TRON-AI:</b> Welcome, ".$userdetails['firstname'].". The date is ".date('F jS, Y',time()) .". It is ".date('h:iA',time())."."; ?></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -310,35 +310,35 @@ if (isset($_GET['page'])) {
 							</form>
                         </li>-->
                         <li>
-                            <a style="color:#DD182A;" href="index.php?page=dash"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a style="color:#41d785;" href="index.php?page=dash"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a style="color:#DD182A;" href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Statistics<span class="fa arrow"></span></a>
+                            <a style="color:#41d785;" href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Statistics<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a style="color:#DD182A;" href="index.php?page=stats"><i class="fa fa-table fa-fw"></i> Performance Chart</a>
+                                    <a style="color:#41d785;" href="index.php?page=stats"><i class="fa fa-table fa-fw"></i> Performance Chart</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a style="color:#DD182A;" href="#"><i class="fa fa-group fa-fw"></i> Ranked 5's<span class="fa arrow"></span></a>
+                            <a style="color:#41d785;" href="#"><i class="fa fa-group fa-fw"></i> Ranked 5's<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a style="color:#DD182A;" href="index.php?page=bulletin"><i class="fa fa-paperclip fa-fw"></i> Bulletin</a>
+                                    <a style="color:#41d785;" href="index.php?page=bulletin"><i class="fa fa-paperclip fa-fw"></i> Bulletin</a>
                                 </li>
                                 <li>
-                                    <a style="color:#DD182A;" href="index.php?page=roster"><i class="fa fa-table fa-fw"></i> Roster</a>
+                                    <a style="color:#41d785;" href="index.php?page=roster"><i class="fa fa-table fa-fw"></i> Roster</a>
                                 </li>
                                 <li>
-                                    <a style="color:#DD182A;" href="index.php?page=comp#"><i class="fa fa-file fa-fw"></i> Team Comps</a>
+                                    <a style="color:#41d785;" href="index.php?page=comp#"><i class="fa fa-file fa-fw"></i> Team Comps</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a style="color:#DD182A;" href="index.php?page=soundcloud"><i class="fa fa-music fa-fw"></i> SoundCloud</a>
+                            <a style="color:#41d785;" href="index.php?page=soundcloud"><i class="fa fa-music fa-fw"></i> SoundCloud</a>
                         </li>
     					<li>
-                            <a style="color:#DD182A;" href="index.php?page=about"><i class="fa fa-user fa-fw"></i> About</a>
+                            <a style="color:#41d785;" href="index.php?page=about"><i class="fa fa-user fa-fw"></i> About</a>
                         </li>
                     </ul>
                     <!-- /#side-menu -->

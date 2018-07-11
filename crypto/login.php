@@ -145,7 +145,7 @@ require_once("genlatestmsg.php");
                   <div class="modal-content">
                     <div class="modal-header">
                       <button style="color:black;" type="button" class="close" data-dismiss="modal">×</button>
-                      <h4 class="modal-title">Register Form</h4>
+                      <h4 class="modal-title">Register Form (beta)</h4>
                     </div>
                     <form class="form-horizontal" action="index.php?action=register" method="POST" role="form">
                     <div class="modal-body" style="transform:scale(0.9);">
@@ -165,7 +165,7 @@ require_once("genlatestmsg.php");
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Password</label><br><br>
                             <div class="col-lg-12">
-                                <input type="password" class="form-control" name="inputPassword" placeholder="Password">
+                                <input type="password" class="form-control" name="inputPassword" placeholder="Do not use a real password!!">
                             </div>
                         </div>
                         <div class="form-group">
@@ -212,7 +212,7 @@ require_once("genlatestmsg.php");
 
                     </div>
                     <div class="modal-footer">
-                      <button type="submit" class="btn btn-success btn-block">Login</button>
+                      <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
                     </form>
                   </div><!-- /.modal-content -->
@@ -227,10 +227,10 @@ require_once("genlatestmsg.php");
               <div style="position: relative; left: 0; top: 0;">
                   <div style="margin-top:-80px;" align="center">
                       
-            <hr style="border-color:#7711FF;background-color:#7711FF;color:#7711FF;">
+            <hr style="border-color:#4cf3ad;background-color:#4cf3ad;color:#4cf3ad;">
                   <img style="margin-left:auto; margin-top:30px; height:130px; weight:130px;overflow: hidden;" src="img/ndb_logo.png"/><br><br>
                   </div>
-                  <hr style="border-color:#7711FF;background-color:#7711FF;color:#7711FF;">
+                  <hr style="border-color:#4cf3ad;background-color:#4cf3ad;color:#4cf3ad;">
               </div>
        
                    

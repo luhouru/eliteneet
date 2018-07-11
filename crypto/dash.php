@@ -1,5 +1,5 @@
            
-        <div class="row">
+        <!--<div class="row">
             <div class="col-lg-12">
                 <div class="col-lg-6">
             <div class="well well-sm">
@@ -12,8 +12,8 @@
             </div>
                 </div>
              </div>
-        </div>
-                <div class="col-lg-12">
+        </div>-->
+                <div style="margin-top:-30px;" class="col-lg-12">
                     <div>
                     <h3 style="color:white;line-height:60px;">BTC Value:
                         <?php
@@ -26,7 +26,8 @@
                                 $btc_result = mysqli_query($connection, $last_btc_value);
                                 $row_cnt = $btc_result->num_rows;
                                 if ($row_cnt == 0) {
-                                    $btc = 0;
+                                    $btc = 4;
+                                    //change this in future
                                 } else {
                                     $btc_row = mysqli_fetch_assoc($btc_result);
                                     $btc = $btc_row['btc_after'];
@@ -36,28 +37,40 @@
                     </div>
                      <div class="progress progress-striped active">
                         <div class="progress-bar"
-                             <?php echo "style='width: ".$lp_old."%'"; ?> >
+                             <?php echo "style='width: ".$btc."%'"; ?> >
                         </div>
                     </div>
                     <!-- /.panel -->
                     <?php 
-					   echo mostrecent(0,0);
+					   echo tablegen(0,0); 
 					?>
                     </div>
-                <div class="col-lg-12">
-                    <!-- /.panel -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--<div class="col-lg-12">
                      <div class="panel panel-primary">
                         <div class="panel-heading">
                             <i class="fa fa-bar-chart-o fa-fw"></i> Announcements
                         </div>
-                        <!-- /.panel-heading -->
                         <div class="panel-body">
                             <p>Mandate of Heaven will become inactive soon. At least we made Bronze!</p>
                         </div>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
-                </div>
+                </div>-->
                 <!--<div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -70,14 +83,11 @@
                     </div>
                 </div>-->
                 <!-- /.col-lg-12 -->
-                <div class="col-lg-6">
-                    <!-- /.panel -->
-                     <?php echo gen_roster(0,0); ?>
+                <!--<div class="col-lg-6">
+                     <?php //echo gen_roster(0,0); ?>
                 </div>
-                <!-- /.col-lg-6 -->
 				<div class="col-lg-6">
-                    <?php echo gen_team_comp(0,0); ?>
+                    <?php //echo gen_team_comp(0,0); ?>
 
-                </div>
-            </div>
-            <!-- /.row -->
+                </div>-->
+           

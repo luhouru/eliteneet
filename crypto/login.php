@@ -255,14 +255,14 @@ require_once("genlatestmsg.php");
                 <div class="col-lg-12">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <i class="fa fa-upload fa-fw"></i> LOG NEW ENTRY
+                            <i class="fa fa-upload fa-fw"></i> New Trade
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <form action="index.php?page=stats&action=add_entry" method="POST" role="form">
                             <div class="col-lg-4">
 								<div class="form-group">
-                                    <label>Division:</label>
+                                    <label>Coin:</label>
                                     <select class="form-control" id="select" name="coin">
                                         <option>BTC</option>
                                         <option>BCH</option>
@@ -280,38 +280,38 @@ require_once("genlatestmsg.php");
 								</div>
                                 <div class="form-group">
                                     <label>Amount:</label>
-                                    <input placeholder="0" type="number" name="quantity" min="0" max="100" class="form-control" name="amount" disabled>
+                                    <input placeholder="3000" type="number" name="quantity" min="0" max="100" class="form-control" name="amount" disabled>
 								</div>
                                 <div class="form-group">
-                                    <label>Buy At:</label>
-                                    <input placeholder="0.00000500" class="form-control" name="buyprice" disabled>
+                                    <label>BTC Before:</label>
+                                    <input placeholder="3.0 BTC" class="form-control" name="btcbefore" disabled>
 								</div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-									<label>Sold At:</label>
-                                    <input placeholder="0.00000550" class="form-control" name="sellprice" disabled>
+									<label>Buy At:</label>
+                                    <input placeholder="0.00000500" class="form-control" name="buyprice" disabled>
 								</div>
 								<div class="form-group">
-									<label>BTC Before:</label>
-                                    <input placeholder="3.0" class="form-control" name="btcbefore" disabled>
+									<label>% Gain:</label>
+                                    <input placeholder="10%" class="form-control" name="pergain" disabled>
 								</div>
                                 <div class="form-group">
 									<label>BTC After:</label>
-                                    <input placeholder="3.3" type="number" name="quantity" min="0" max="650" class="form-control" name="btcafter" disabled>
+                                    <input placeholder="3.3 BTC" type="number" name="quantity" min="0" max="650" class="form-control" name="btcafter" disabled>
 								</div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-									<label>% Gain:</label>
-                                    <input class="form-control" name="pergain" disabled>
+									<label>Sell At:</label>
+                                    <input placeholder="0.00000550" class="form-control" name="sellprice" disabled>
 								</div>
 								<div class="form-group">
 									<label>BTC Gain:</label>
-                                    <input class="form-control" name="btcgain" disabled>
+                                    <input placeholder="0.3 BTC" class="form-control" name="btcgain" disabled>
                                 </div>
                             <div class="form-group">
-							<button type="submit" align="center" style="margin-top:35px;" class="disabled btn btn-danger btn-lg btn-block">Add Entry</button></div>
+							<button type="submit" align="center" style="margin-top:35px;" class="disabled btn btn-danger btn-lg btn-block">Enter Trade</button></div>
                             </div>
 							</form>
 

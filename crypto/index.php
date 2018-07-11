@@ -265,8 +265,9 @@ if (isset($_GET['page'])) {
 
 </head>
 
-<body style="zoom: 85%";background-size:100%;background-position:absolute;background-attachment:fixed;background-color:transparent; background="img/blue_Bg.jpg">
-
+<!--<body style="zoom: 85%";background-size:100%;background-position:absolute;background-attachment:fixed;background-color:transparent; background="img/blue_Bg.jpg">-->
+    
+<body style="zoom: 90%;background-size:100%;background-position:absolute;background-attachment:fixed;" background="img/nashor_bg.png">
     <div id="wrapper">
 
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">

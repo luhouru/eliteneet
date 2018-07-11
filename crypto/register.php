@@ -34,7 +34,7 @@ $db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
         // THIS WILL BE A WIP FOR INITIATING A TRADES SPREADSHEET
         
         $db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
-        $stats_result = mysqli_query($db, "CREATE TABLE ".$username." (entry_id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY, coin varchar(255), amt bigint(20), sat_buy decimal(20), sat_sel decimal(20), btc_before decimal(10), btc_after decimal(20), per_gain decimal(20), btc_gain decimal(20));");
+        $stats_result = mysqli_query($db, "CREATE TABLE ".$username." (entry_id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY, coin varchar(255), amt bigint(20), sat_buy decimal(20), sat_sel decimal(20), btc_before decimal(10), btc_after decimal(20), per_gain decimal(20), btc_gain decimal(20), cum_btc decimal(20));");
         
         
         if ($stats_result == false) {

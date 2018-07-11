@@ -1,9 +1,10 @@
 <?php
 
-function add_entry($division, $lp, $champion, $position, $kda, $cs, $mistakes, $improvements) {
+function add_entry($coin, $amount, $btcbefore, $buyprice, $pergain, $btcafter, $sellprice, $btcgain) {
 
 	// Connecting to database
-	$connection = mysqli_connect("localhost", "root", "supfoo2971", "stats");
+	$connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
+    
     /*$db_name = 'stats';
     mysql_select_db($db_name, $connection);*/
  	
@@ -20,29 +21,32 @@ function add_entry($division, $lp, $champion, $position, $kda, $cs, $mistakes, $
 	
     // find the last entries LP
     $username = $_COOKIE['username'];
-    $lp_query = "SELECT `lp` FROM ".$username." ORDER BY entry_id DESC limit 1";
+    
+    // calculate cum gain
+    $btc_query = "SELECT `cum_btc` FROM ".$username." ORDER BY entry_id DESC limit 1";
 
-    $lp_result = mysqli_query($connection, $lp_query);
-    $row_cnt = $lp_result->num_rows;
+    $btc_result = mysqli_query($connection, $lp_query);
+    $row_cnt = $btc_result->num_rows;
     if ($row_cnt == 0) {
-        $lp_old = 0;
+        $btc_old = 0;
     } else {
-        $lp_row = mysqli_fetch_assoc($lp_result);
-        $lp_old = $lp_row['lp'];
+        $btc_row = mysqli_fetch_assoc($lp_result);
+        $btc_old = $btc_row['btc_after'];
     }
 
-    // calculate gain
-    $gain = $lp - $lp_old;
+    // calculate cum btc
+    $cumbtc = $btcafter - $btc_old;
     
     // insert the new form inputs into the database
-    $insert_query = "INSERT INTO ".$username." SET division='".$division."', lp=$lp, gain='".$gain."', champion='".$champion."', position='".$position."', kda='".$kda."', cs=$cs, mistakes='".$mistakes."', improve_by='".$improvements."';";
+    $insert_query = "INSERT INTO ".$username." SET coin='".$coin."', amt=$amount, sat_buy=$buyprice, sat_sel=$sellprice, btc_before=$btcbefore, btc_after=$btcafter, per_gain='".$pergain."', btc_gain=$btcgain, cum_btc=$cumbtc;";
+    
     $result = mysqli_query($connection, $insert_query);
     if ($result == false) {
         echo "Errormessage: ".$connection->error;
         die();
     }
 
-$array = array($division, $lp, $gain, $champion, $position, $kda, $cs, $mistakes, $improvements);
+$array = array($coin, $amount, $btcbefore, $buyprice, $pergain, $btcafter, $sellprice, $btcgain, $cumbtc);
 return $array;
 }
 ?>

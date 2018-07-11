@@ -72,7 +72,7 @@ $forstyle = "btn-primary";
 
 $result = '<div style="padding-bottom:3px;" class="panel panel-info">
                         <div class="panel-heading">
-                            <i class="fa fa-table fa-fw"></i> Performance Chart
+                            <i class="fa fa-table fa-fw"></i> Trading Tracker
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -82,15 +82,15 @@ $result = '<div style="padding-bottom:3px;" class="panel panel-info">
                                         <table data-pagination="true" class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th style="width: 60px;">Division</th>
-                                                    <th style="width: 25px;">LP</th>
-                                                    <th style="width: 25px;">Gain</th>
-                                                    <th style="width: 60px;">Champion</th>
-                                                    <th style="width: 60px;">Position</th>
-                                                    <th style="width: 40px;">KDA</th>
-                                                    <th style="width: 20px;">CS</th>
-                                                    <th style="width: 75px;">Mistakes</th>
-                                                    <th style="width: 75px;">Improvements</th>
+                                                    <th style="width: 25px;">Coin</th>
+                                                    <th style="width: 25px;">Amount</th>
+                                                    <th style="width: 60px;">Buy</th>
+                                                    <th style="width: 60px;">Sell</th>
+                                                    <th style="width: 40px;">BTC Before</th>
+                                                    <th style="width: 40px;">BTC After</th>
+                                                    <th style="width: 20px;">% Gain</th>
+                                                    <th style="width: 50px;">BTC Gain</th>
+                                                    <th style="width: 50px;">Cum. BTC</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

@@ -15,7 +15,7 @@
         </div>
                 <div class="col-lg-12">
                     <div>
-                    <h3>LP:
+                    <h3>BTC Value:
                         <?php
                                 $connection = mysqli_connect("localhost", "root", "supfoo2971", "stats");
                                 /*$db_name = 'stats';

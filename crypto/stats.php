@@ -112,11 +112,12 @@
                                 break;
 			}
 
-                        if ($lp_old == 100) {
+                       /* if ($lp_old == 100) {
                             echo "In Series! Next Division: ".$next_div;
                         } else {
                             echo "Next Division: ".$next_div;
-                        }
+                        }*/
+                    echo "<p style='color:white;'>BTC Value: ".$next_div."</p>";
                     ?></p>
             <div class="progress progress-striped active">
                 <div class="progress-bar"

@@ -354,7 +354,7 @@ if (isset($_GET['page'])) {
             <div class="row">
                
                 <div class="col-lg-12">
-                    <h1 style="color:black;line-height:60px;" class="page-header"><b>CryptoDB</b> <small style="color:#4582ec"><?php echo $subtitle; ?></small> <img style="vertical-align:middle;float:right;" height="60" src="img/baron_icon.png" /></h1>
+                    <h1 style="color:white;line-height:60px;" class="page-header"><b>CryptoDB</b> <small style="color:#15f999"><?php echo $subtitle; ?></small> <img style="vertical-align:middle;float:right;" height="60" src="img/baron_icon.png" /></h1>
                 </div>
                     
             </div>

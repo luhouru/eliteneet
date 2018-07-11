@@ -17,21 +17,21 @@
                     <div>
                     <h3>BTC Value:
                         <?php
-                                $connection = mysqli_connect("localhost", "root", "supfoo2971", "stats");
+                                $connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
                                 /*$db_name = 'stats';
                                 mysql_select_db($db_name, $connection);*/
                                 $username = $_COOKIE['username'];
                                 // find the last entries LP
-                                $lp_query = "SELECT `lp` FROM ".$username." ORDER BY entry_id DESC limit 1";
-                                $lp_result = mysqli_query($connection, $lp_query);
-                                $row_cnt = $lp_result->num_rows;
+                                $last_btc_value = "SELECT `btc_after` FROM ".$username." ORDER BY entry_id DESC limit 1";
+                                $btc_result = mysqli_query($connection, $last_btc_value);
+                                $row_cnt = $btc_result->num_rows;
                                 if ($row_cnt == 0) {
-                                    $lp_old = 0;
+                                    $btc = 0;
                                 } else {
-                                    $lp_row = mysqli_fetch_assoc($lp_result);
-                                    $lp_old = $lp_row['lp'];
+                                    $btc_row = mysqli_fetch_assoc($btc_result);
+                                    $btc = $btc_row['btc_after'];
                                 }
-                                echo $lp_old;
+                                echo $btc;
                             ?></h3>
                     </div>
                      <div class="progress progress-striped active">

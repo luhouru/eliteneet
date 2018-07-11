@@ -1,25 +1,32 @@
 <?php
 
-// this script will insert the user into the users table
-// as well as create a stats table for the user
+// THIS IS THE REGISTER SCRIPT
+// REGISTERS A USER AND THEIR TABLES
+// copyright ~LUHO.
 
 function register($firstname, $username, $password, $email) {
 
 $db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
 		
+    // DB CONNECTION FAIL = ABORT
+    
 	if (!$db) {
 		return 2;
 	}
     
+    // ENCRYPT PASSWORD
     
 	$password = sha1($password);
     
-    // check if username is already taken
+    // CHECK IF EXISTING USER EXISTS
+    
     $taken_query = mysqli_query($db, "SELECT username FROM users WHERE username='".$username."';");
     $num_rows = mysqli_num_rows($taken_query);
 
     if ($num_rows == 0) {
-        // then safe to insert, so insert into users
+        
+        // IF SAFE, CREATE USER
+        
         $result = mysqli_query($db,"INSERT INTO users (username, password, email, type, firstname) VALUES ('".$username."', '".$password."', '".$email."', 'member', '".$firstname."');");
         
         if ($result == false) {
@@ -28,18 +35,23 @@ $db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
             die();
         }
         
-        // safe to insert
-        // connect to stats table
-        
-        // THIS WILL BE A WIP FOR INITIATING A TRADES SPREADSHEET
-        
-        $db = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
-        $stats_result = mysqli_query($db, "CREATE TABLE ".$username." (entry_id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY, coin varchar(255), amt bigint(20), sat_buy decimal(20,10), sat_sel decimal(20,10), btc_before decimal(20,10), btc_after decimal(20,10), per_gain decimal(20,10), btc_gain decimal(20,10), cum_btc decimal(20,10));");
+        // WE CREATE THE TRACKER TABLE
+        $stats_result = mysqli_query($db, "CREATE TABLE ".$username." (entry_id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY, coin varchar(255), amt bigint(20), sat_buy decimal(20,8), sat_sel decimal(20,8), btc_before decimal(20,3), btc_after decimal(20,3), per_gain decimal(20,2), btc_gain decimal(20,3), cum_btc decimal(20,3));");
         
         
         if ($stats_result == false) {
             echo "Create table failed: ".mysqli_error($db)."<br>";
             echo "Error creating trades table, please e-mail contact the administrator.";
+            die();
+        }
+        
+
+        // WE ALSO CREATE A HOLDINGS TABLE
+        $hodl_result = mysqli_query($db, "CREATE TABLE ".$username."_hodl (entry_id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY, coin varchar(255), amt bigint(20));");
+        
+        if ($hodl_result == false) {
+            echo "Create table failed: ".mysqli_error($db)."<br>";
+            echo "Error creating hodl table, please e-mail contact the administrator.";
             die();
         }
             

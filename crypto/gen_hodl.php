@@ -1,6 +1,6 @@
 <?php
 
-function gen_team_comp($type, $pagenum) {
+function gen_hodl($type, $pagenum) {
 // Connecting to database
 
 //styling stuff
@@ -18,11 +18,9 @@ $backstyle = "btn-primary";
 }
 
 $tbody = '';
-$connection = mysqli_connect("localhost", "root", "supfoo2971", "stats");
-/*$db_name = 'stats';
-mysql_select_db($db_name, $connection);*/
-$query = "SELECT * FROM teamcomps;";
-
+$connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
+$username = $_COOKIE['username'];
+$query = "SELECT * FROM ".$username."_hodl;";
 $result = mysqli_query($connection, $query);
 
 $count = 0;
@@ -74,11 +72,8 @@ $result = '<div class="panel panel-danger">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th style="width: 60px;">Top</th>
-                                                    <th style="width: 60px;">Mid</th>
-                                                    <th style="width: 60px;">Jungle</th>
-                                                    <th style="width: 60px;">ADC</th>
-                                                    <th style="width: 60px;">Support</th>
+                                                    <th style="width: 60px;">Coin</th>
+                                                    <th style="width: 60px;">Holding</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

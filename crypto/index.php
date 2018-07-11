@@ -10,9 +10,9 @@ require_once("gen_roster.php");
 require_once("checklogin.php");
 require_once("add_entry.php");
 require_once("add_roster.php");
-require_once("add_teamcomp.php");
+require_once("add_hodl.php");
 require_once("genchecklist.php");
-require_once("gen_team_comp.php");
+require_once("gen_hodl.php");
 require_once("genlatestmsg.php");
 require_once("register.php");
 
@@ -101,24 +101,15 @@ if (isset($_GET['action'])) {
 		die();
 	break;
     
-	case "add_teamcomp":
-	if (!isset($_POST['top'])) {
-		$_POST['top'] = NULL;
+	case "add_hodl":
+	if (!isset($_POST['coin'])) {
+		$_POST['coin'] = NULL;
 	}
     if (!isset($_POST['mid'])) {
-		$_POST['mid'] = NULL;
-	}
-    if (!isset($_POST['jungle'])) {
-		$_POST['jungle'] = NULL;
-	}
-    if (!isset($_POST['adc'])) {
-		$_POST['adc'] = NULL;
-	}
-    if (!isset($_POST['support'])) {
-		$_POST['support'] = NULL;
+		$_POST['amt'] = NULL;
 	}
         
-    $tc = add_teamcomp($_POST['top'],$_POST['mid'],$_POST['jungle'],$_POST['adc'],$_POST['support']);
+    $tc = add_hodl($_POST['coin'],$_POST['amt']);
 	$tcset = true;
 	break;
         
@@ -388,7 +379,7 @@ if (isset($_GET['page'])) {
 				break;
                     
                 case "comp":
-                require_once("team_comp.php");
+                require_once("hodl.php");
                 break;
                     
                 case "roster":

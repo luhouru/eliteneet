@@ -85,16 +85,17 @@
                                 $coins_result = mysqli_fetch_assoc($coins);
                             }
                     ?>
-                <div style="margin-top:-30px;" class="col-lg-12">
-                    <h3 style="color:white;line-height:60px;">BTC Value:
+                <div style="margin-top:-30px; clear: both" class="col-lg-12">
+                    <div><h3 style="color:white;line-height:60px; float: left;">BTC Value:
                         <?php
                         $balance = totalBalance($coins_result);
                         $btc_price = calcPrice("bitcoin");
                         $btc_value = $balance / $btc_price;
-                        echo $btc_value." BTC | $".$balance." USD";
-                        ?>
-                        </h3>
-                    </div>
+                        echo $btc_value." BTC"; ?></h3></div>
+                    <div><h3 style="color:white;line-height:60px; float: right;">$
+                        <?php
+                        echo $balance." USD"; ?></h3></div>
+                </div>   
 
                 <div class="col-lg-12">
                      <div class="progress progress-striped active">

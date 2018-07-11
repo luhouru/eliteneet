@@ -4,22 +4,6 @@ function add_entry($coin, $amount, $btcbefore, $buyprice, $pergain, $btcafter, $
 
 	// Connecting to database
 	$connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
-    
-    /*$db_name = 'stats';
-    mysql_select_db($db_name, $connection);*/
- 	
-	// INSERT INTO TABLE VALUES FROM FORM
-	/*$division = $_POST['division'];
-    $lp = $_POST['lp'];
-    $gain = $_POST['gain'];
-    $champion = $_POST['champion'];
-    $position = $_POST['position'];
-    $kda = $_POST['kda'];
-    $cs = $_POST['cs'];
-	$mistakes = $_POST['mistakes'];
-	$improvements = $_POST['improvements'];*/
-	
-    // find the last entries LP
     $username = $_COOKIE['username'];
     
     // calculate cum gain
@@ -38,9 +22,6 @@ function add_entry($coin, $amount, $btcbefore, $buyprice, $pergain, $btcafter, $
     $cumbtc = $btcafter - $btc_old;
     
     // insert the new form inputs into the database
-    
-    
-    
     $insert_query = "INSERT INTO ".$username." SET coin='".$coin."', amt=$amount, sat_buy=$buyprice, sat_sel='".$sellprice."', btc_before='".$btcbefore."', btc_after='".$btcafter."', per_gain='".$pergain."', btc_gain='".$btcgain."', cum_btc='".$cumbtc."';";
     
     $result = mysqli_query($connection, $insert_query);

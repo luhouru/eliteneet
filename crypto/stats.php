@@ -7,11 +7,10 @@
                                 mysql_select_db($db_name, $connection);*/
                                 $username = $_COOKIE['username'];
                                 // find the last entries LP
-                                $last_btc_value = "SELECT `btc_after` FROM ".$username." ORDER BY entry_id DESC limit 1";
+                                $last_btc_value = "SELECT * FROM ".$username." ORDER BY entry_id DESC limit 1";
                                 $btc_result = mysqli_query($connection, $last_btc_value);
                                 $row_cnt = $btc_result->num_rows;
                                 if ($row_cnt == 0) {
-                                    // change this placeholder hardcode
                                     $btc = 0;
                                 } else {
                                     $btc_row = mysqli_fetch_assoc($btc_result);
@@ -45,8 +44,7 @@
                             <div class="col-lg-4">
 								<div class="form-group">
                                     <label>Coin:</label>
-                                    <select class="form-control" name="coin" id="select" type="text">
-                                        
+                                    <select class="form-control" id="select" name="coin">
                                         <option>BTC</option>
                                         <option>BCH</option>
                                         <option>ETH</option>
@@ -63,35 +61,35 @@
 								</div>
                                 <div class="form-group">
                                     <label>Amount:</label>
-                                    <input type="text" class="form-control" name="amount">
+                                    <input placeholder="3000" type="number" min="0" max="1000000" class="form-control" name="amount">
 								</div>
                                 <div class="form-group">
                                     <label>BTC Before:</label>
-                                    <input type="text" class="form-control" name="btcbefore">
+                                    <input placeholder="3.0" type="number" step="any" class="form-control" name="btcbefore">
 								</div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
 									<label>Buy At:</label>
-                                    <input type="text" class="form-control" name="buyprice">
+                                    <input placeholder="0.00000500" type="number" step="any" class="form-control" name="buyprice">
 								</div>
 								<div class="form-group">
 									<label>% Gain:</label>
-                                    <input type="text" class="form-control" name="pergain">
+                                    <input placeholder="10%" class="form-control" name="pergain">
 								</div>
                                 <div class="form-group">
 									<label>BTC After:</label>
-                                    <input type="text" class="form-control" name="btcafter">
+                                    <input placeholder="3.3" type="number" step="any" min="0" max="650" class="form-control" name="btcafter">
 								</div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
 									<label>Sell At:</label>
-                                    <input type="text" class="form-control" name="sellprice">
+                                    <input placeholder="0.00000550" type="number" step="any" class="form-control" name="sellprice">
 								</div>
 								<div class="form-group">
 									<label>BTC Gain:</label>
-                                    <input type="text" class="form-control" name="btcgain">
+                                    <input placeholder="0.3" type="number" step="any" class="form-control" name="btcgain">
                                 </div>
                             <div class="form-group">
 							<button type="submit" align="center" style="margin-top:35px;" class="btn btn-info btn-lg btn-block">Enter Trade</button></div>

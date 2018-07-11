@@ -368,7 +368,7 @@ require_once("genlatestmsg.php");
         <div class="row">
           <div align="center" class="col-lg-12">
               <br>
-            <p style="color:white;">Email: <a style="color:rgb(226, 63, 63);" href="mailto:luho@chrisluk.im">luho@chrisluk.im</a><br><br><a style="color:#00FFBF;" href="http://chrisluk.im" rel="nofollow">&copy;LUHO</a></p>
+            <p style="color:white;">Email: <a style="color:white;" href="mailto:luho@chrisluk.im">luho@chrisluk.im</a><br><br><a style="color:#00FFBF;" href="http://chrisluk.im" rel="nofollow">&copy;LUHO</a></p>
           </div>
         </div>
 

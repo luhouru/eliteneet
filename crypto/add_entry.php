@@ -1,11 +1,7 @@
 <?php
 
-
-$coin = $_POST['coin'];
-
 function add_entry($coin, $amount, $btcbefore, $buyprice, $pergain, $btcafter, $sellprice, $btcgain) {
 
-    die($coin);
 	// Connecting to database
 	$connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
     

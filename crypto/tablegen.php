@@ -18,7 +18,7 @@ $backstyle = "btn-primary";
 }
 
 $tbody = '';
-$connection = mysqli_connect("localhost", "root", "supfoo2971", "stats");
+$connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
 /*$db_name = 'stats';
 mysql_select_db($db_name, $connection);*/
 $query = "";

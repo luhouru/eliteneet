@@ -22,11 +22,10 @@
                                 mysql_select_db($db_name, $connection);*/
                                 $username = $_COOKIE['username'];
                                 // find the last entries LP
-                                $last_btc_value = "SELECT `btc_after` FROM ".$username." ORDER BY entry_id DESC limit 1";
+                                $last_btc_value = "SELECT * FROM ".$username." ORDER BY entry_id DESC limit 1";
                                 $btc_result = mysqli_query($connection, $last_btc_value);
                                 $row_cnt = $btc_result->num_rows;
                                 if ($row_cnt == 0) {
-                                    // change this placeholder hardcode
                                     $btc = 0;
                                 } else {
                                     $btc_row = mysqli_fetch_assoc($btc_result);

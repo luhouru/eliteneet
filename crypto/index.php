@@ -144,32 +144,32 @@ if (isset($_GET['action'])) {
 	break;
 
 	case "add_entry":
-	if (!isset($_POST['division'])) {
-		$_POST['division'] = NULL;
+	if (!isset($_POST['coin'])) {
+		$_POST['coin'] = NULL;
 	}
-    if (!isset($_POST['lp'])) {
-		$_POST['lp'] = NULL;
+    if (!isset($_POST['amount'])) {
+		$_POST['amount'] = NULL;
 	}
-    if (!isset($_POST['champion'])) {
-		$_POST['champion'] = NULL;
+    if (!isset($_POST['btcbefore'])) {
+		$_POST['btcbefore'] = NULL;
 	}
-    if (!isset($_POST['position'])) {
-		$_POST['position'] = NULL;
+    if (!isset($_POST['buyprice'])) {
+		$_POST['buyprice'] = NULL;
 	}
-    if (!isset($_POST['kda'])) {
-		$_POST['kda'] = NULL;
+    if (!isset($_POST['pergain'])) {
+		$_POST['pergain'] = NULL;
 	}
-	if (!isset($_POST['cs'])) {
-		$_POST['cs'] = NULL;
+	if (!isset($_POST['btcafter'])) {
+		$_POST['btcafter'] = NULL;
 	}
-	if (!isset($_POST['mistakes'])) {
-		$_POST['mistakes'] = NULL;
+	if (!isset($_POST['sellprice'])) {
+		$_POST['sellprice'] = NULL;
 	}
-    if (!isset($_POST['improvements'])) {
-		$_POST['improvements'] = NULL;
+    if (!isset($_POST['btcgain'])) {
+		$_POST['btcgain'] = NULL;
 	}
 
-	$alert = add_entry($_POST['division'],$_POST['lp'],$_POST['champion'],$_POST['position'],$_POST['kda'],$_POST['cs'],$_POST['mistakes'],$_POST['improvements']);
+	$alert = add_entry($_POST['coin'],$_POST['amount'],$_POST['btcbefore'],$_POST['buyprice'],$_POST['pergain'],$_POST['btcafter'],$_POST['sellprice'],$_POST['btcgain']);
 	$alertset = TRUE;
 	break;
 
@@ -421,7 +421,6 @@ if (isset($_GET['page'])) {
 				}
 
 			?>
-			
         </div>
         <!-- /#page-wrapper -->
         
@@ -513,27 +512,30 @@ if (isset($_GET['page'])) {
     <script src="js/plugins/morris/raphael-2.1.0.min.js"></script>
     <script src="js/plugins/morris/morris.js"></script>
       
+    
+    
     <?php
-	$db = mysqli_connect("localhost", "root", "supfoo2971", "stats");
-    $result = mysqli_query($db, "SELECT champion, count(*) FROM chrisluk GROUP BY champion ORDER BY count(*) DESC;");
-    if ($result == false) {
-        echo "WHY YOU FAIL BETCH FFS";
-        die();
-    }
+	//$db = mysqli_connect("localhost", "root", "supfoo2971", "stats");
+    //$result = mysqli_query($db, "SELECT champion, count(*) FROM chrisluk GROUP BY champion ORDER BY count(*) DESC;");
+    //if ($result == false) {
+    //    echo "WHY YOU FAIL BETCH FFS";
+    //    die();
+    //}
         
-	$errors = mysqli_fetch_all($result);
-	$datas = "";
-	foreach ($errors as &$val) {
-		$val[0] = basename($val[0]);
-		$datas .= "{ y: '$val[0]', a: $val[1]},";
-	}
+	//$errors = mysqli_fetch_all($result);
+	//$datas = "";
+	// ($errors as &$val) {
+	//	$val[0] = basename($val[0]);
+	//	$datas .= "{ y: '$val[0]', a: $val[1]},";
+	//}
 	?>
 	
-	<script>
+    
+	<!--<script>
 	Morris.Bar({
 		element: 'morris-file-bar',
 		data: [
-		<?php echo $datas; ?>
+		<?php //echo $datas; ?>
 			],
 		xkey: 'y',
 		ykeys: ['a'],
@@ -541,7 +543,7 @@ if (isset($_GET['page'])) {
         allowDecimals: false,
 		labels: ['Count']
 	});
-	</script>
+	</script>-->
     
 </body>
 

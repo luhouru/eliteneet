@@ -105,11 +105,11 @@ if (isset($_GET['action'])) {
 	if (!isset($_POST['coin'])) {
 		$_POST['coin'] = NULL;
 	}
-    if (!isset($_POST['mid'])) {
-		$_POST['amt'] = NULL;
+    if (!isset($_POST['amount'])) {
+		$_POST['amount'] = NULL;
 	}
         
-    $tc = add_hodl($_POST['coin'],$_POST['amt']);
+    $tc = add_hodl($_POST['coin'],$_POST['amount']);
 	$tcset = true;
 	break;
         
@@ -353,22 +353,14 @@ if (isset($_GET['page'])) {
 
 			<?php
 
-                //alert for roster and teamcomp addition
-				if ( (empty($roster[0])) || (empty($roster[1])) || (empty($roster[2])) || (empty($roster[3])) || (empty($roster[4])) ) {
-                    $rostermessage = NULL;
-                } else { $rostermessage = "not null"; }
-                if ( (empty($tc[0])) || (empty($tc[1])) || (empty($tc[2])) || (empty($tc[3])) || (empty($tc[4])) ) {
+                //alert for HODL
+                if ( (empty($tc[0])) || (empty($tc[1])) ) {
                     $tcmessage = NULL;
                 } else { $tcmessage = "not null"; }	
-				if ($rostermessage != NULL) {
-					echo "<div class=\"alert alert-success\"><b><center>New Roster Added!</b></center></div>";
-				} else if (isset($rosterset)) {
-					echo "<div class=\"alert alert-danger\"><b><center>No roster added. Please input a valid roster.</center></b></div>";
-				}  
                 if ($tcmessage != NULL) {
-					echo "<div class=\"alert alert-success\"><b><center>New Team Comp Added!</b></center></div>";
+					echo "<div class=\"alert alert-success\"><b><center>Holding entry added.</b></center></div>";
 				} else if (isset($tcset)) {
-					echo "<div class=\"alert alert-danger\"><b><center>No comp added. Please input a valid team composition.</center></b></div>";
+					echo "<div class=\"alert alert-danger\"><b><center>No entry added. Please input valid entry.</center></b></div>";
 				}
 
 				if (isset($_GET['page'])) {

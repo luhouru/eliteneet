@@ -188,8 +188,8 @@ if (isset($_GET['page'])) {
 		$subtitle = "Add New Roster";
 		break;
         
-        case "comp":
-		$subtitle = "Team Comps";
+        case "hodl":
+		$subtitle = "Holdings";
 		break;
 
 		case "about":
@@ -324,7 +324,7 @@ if (isset($_GET['page'])) {
                             </ul>
                         </li>
                         <li>
-                            <a style="color:#3a66da;" href="index.php?page=comp#"><i class="fa fa-file fa-fw"></i> Placeholder Tab</a>
+                            <a style="color:#3a66da;" href="index.php?page=hodl#"><i class="fa fa-file fa-fw"></i> Holdings</a>
                         </li>
                         <li>
                             <a style="color:#3a66da;" href="index.php?page=soundcloud"><i class="fa fa-music fa-fw"></i> SoundCloud</a>
@@ -370,7 +370,7 @@ if (isset($_GET['page'])) {
 				require_once("stats.php");
 				break;
                     
-                case "comp":
+                case "hodl":
                 require_once("hodl.php");
                 break;
                     

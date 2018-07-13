@@ -43,7 +43,12 @@
                     }
                     
                     // gets value of entire portfolio in USD
-                    function totalBalance($coins_result) { 
+                    function totalBalance($coins_result) {
+                            print_r("COIN RESULT SHOULD HAVE BTC: ".$coins_result);
+                            print_r($coins_result);
+                            foreach($coins_result as $value) {
+                                echo "my value is: ".$value;
+                            }
                             $balance = 0;
                             foreach($coins_result as $value) {
                                     switch ($value) {
@@ -86,7 +91,7 @@
                             if ($coin_row == 0) {
                                 $coins = "No coins.";
                             } else {
-                                $coins_result = mysqli_fetch_assoc($coins);
+                                $coins_result = mysqli_fetch_array($coins);
                             }
 
                     ?>
@@ -126,7 +131,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <form action="index.php?page=stats&action=add_hodl" method="POST" role="form">
+                            <form action="index.php?page=hodl&action=add_hodl" method="POST" role="form">
                             <div class="col-lg-12">
 								
                                     <div class="col-lg-6">

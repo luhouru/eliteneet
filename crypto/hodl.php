@@ -75,7 +75,6 @@
                             return $balance;
                     }
 
-//what is wrong with this shit
                             // this section initializes array of all coins
                             $connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
                             $username = $_COOKIE['username'];
@@ -86,16 +85,7 @@
                             if ($coin_row == 0) {
                                 $coins = "No coins.";
                             } else {
-                                //$coins_result = mysqli_fetch_assoc($coins);
-                                //$newCoins = array();
-                                //$coin_index = 0;
-                                //while($row = $coins_result) { // loop to store the data in an associative array.
-                                //     $newCoins[$coin_index] = $row;
-                                //     $coin_index++;
-                                //}
                                 $coins = $coins->fetch_all();
-                                echo "hello there: <br><br>";
-                                print_r($coins);
                                 $newCoins = array();
                                 $coin_index = 0;
                                 foreach ($coins as $coin) {
@@ -103,7 +93,6 @@
                                     $newCoins[$coin_index] = $newCoin;
                                     $coin_index++;
                                 }
-                                
                             }
 
                     ?>
@@ -111,7 +100,7 @@
                 <div style="margin-top:-30px; clear: both" class="col-lg-12">
                     <div><h3 style="color:white;line-height:60px; float: left;">BTC Value:
                         <?php
-                        $balance = totalBalance($coins);
+                        $balance = totalBalance($newCoins);
                         $btc_price = calcPrice("bitcoin");
                         $btc_value = $balance / $btc_price;
                         echo $btc_value." BTC"; ?></h3></div>

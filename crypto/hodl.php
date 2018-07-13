@@ -23,6 +23,7 @@
                         return $usd;
                     }
                     
+                    // gets the total amount of token holding given its name
                     function calcBalance($coin, $coinname) {
                             $coinPrice = calcPrice($coinname); // this works
                             // connect to db
@@ -41,6 +42,7 @@
                             return $balanceTrue;
                     }
                     
+                    // gets value of entire portfolio in USD
                     function totalBalance($coins_result) { 
                             $balance = 0;
                             foreach($coins_result as $value) {
@@ -49,8 +51,6 @@
                                         case "TRX":
                                             $trx_balance = calcBalance("TRX", "tronix");
                                             $totalUSD = $trx_balance * calcPrice("tronix");
-                                            
-                                            // increase balance
                                             $balance = $balance + $totalUSD;
                                             break;
                                         case "BTC":
@@ -69,14 +69,17 @@
                                             $balance = $balance + $totalUSD;
                                             break;
                                         default:
+                                            $balance = 0;
                                     }
                             }
                             return $balance;
                     }
-                            // connect to db
+
+
+                            // this section initializes array of all coins
                             $connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
                             $username = $_COOKIE['username'];
-                            // grab all of the coins in this table and put it into an array
+                            // grab all of the coins we hold and put it into an array
                             $myCoins = "SELECT DISTINCT coin FROM ".$username."_hodl;";
                             $coins = mysqli_query($connection, $myCoins);
                             $coin_row = $coins->num_rows;
@@ -85,7 +88,9 @@
                             } else {
                                 $coins_result = mysqli_fetch_assoc($coins);
                             }
+
                     ?>
+
                 <div style="margin-top:-30px; clear: both" class="col-lg-12">
                     <div><h3 style="color:white;line-height:60px; float: left;">BTC Value:
                         <?php
@@ -104,8 +109,9 @@
                              <?php echo "style='width: ".$btc."%'"; ?> >
                         </div>
                     </div>
-
-<div class="row">
+                </div>
+                    
+            <div class="row">
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-12">
                     <!-- /.panel -->
@@ -113,15 +119,7 @@
 					   echo gen_hodl(0,0);
                     ?>
                 </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="col-lg-12">
+                <div class="col-lg-12">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <i class="fa fa-upload fa-fw"></i> New Hold

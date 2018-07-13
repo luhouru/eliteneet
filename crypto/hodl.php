@@ -44,11 +44,6 @@
                     
                     // gets value of entire portfolio in USD
                     function totalBalance($coins_result) {
-                            print_r("COIN RESULT SHOULD HAVE BTC: ".$coins_result);
-                            print_r($coins_result);
-                            foreach($coins_result as $value) {
-                                echo "my value is: ".$value;
-                            }
                             $balance = 0;
                             foreach($coins_result as $value) {
                                     switch ($value) {
@@ -80,7 +75,7 @@
                             return $balance;
                     }
 
-
+//what is wrong with this shit
                             // this section initializes array of all coins
                             $connection = mysqli_connect("localhost", "luho", "jisoo", "cryptodb");
                             $username = $_COOKIE['username'];
@@ -91,7 +86,24 @@
                             if ($coin_row == 0) {
                                 $coins = "No coins.";
                             } else {
-                                $coins_result = mysqli_fetch_array($coins);
+                                //$coins_result = mysqli_fetch_assoc($coins);
+                                //$newCoins = array();
+                                //$coin_index = 0;
+                                //while($row = $coins_result) { // loop to store the data in an associative array.
+                                //     $newCoins[$coin_index] = $row;
+                                //     $coin_index++;
+                                //}
+                                $coins = $coins->fetch_all();
+                                echo "hello there: <br><br>";
+                                print_r($coins);
+                                $newCoins = array();
+                                $coin_index = 0;
+                                foreach ($coins as $coin) {
+                                    $newCoin = $coin['0'];
+                                    $newCoins[$coin_index] = $newCoin;
+                                    $coin_index++;
+                                }
+                                
                             }
 
                     ?>
@@ -99,7 +111,7 @@
                 <div style="margin-top:-30px; clear: both" class="col-lg-12">
                     <div><h3 style="color:white;line-height:60px; float: left;">BTC Value:
                         <?php
-                        $balance = totalBalance($coins_result);
+                        $balance = totalBalance($coins);
                         $btc_price = calcPrice("bitcoin");
                         $btc_value = $balance / $btc_price;
                         echo $btc_value." BTC"; ?></h3></div>
